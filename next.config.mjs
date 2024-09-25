@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    output: 'export', // Enables static export
+    basePath: '/CV',  // Optional: Set this if you're deploying to a subdirectory
+  };
+  
+  export default nextConfig;
