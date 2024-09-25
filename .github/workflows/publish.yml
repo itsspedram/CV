@@ -1,8 +1,9 @@
+# File: .github/workflows/publish.yml
 name: publish-to-github-pages
 on:
   push:
     branches:
-      - main
+      - master
 
 permissions:
   contents: read
@@ -31,10 +32,6 @@ jobs:
 
       - name: Build with Next.js 🏗️
         run: npx next build
-
-      - name: Check if 'out' exists and list root directory contents 📂
-        run: |
-          ls -la; pwd;ls ../ -la;ls ../../ -la;ls ../../../ -la;ls ../../../../ -la;ls ../../../../../ -la
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
