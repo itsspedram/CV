@@ -1,6 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import "@fontsource/open-sans"; // Defaults to weight 400
+import "@fontsource/open-sans/400.css"; // Specify weight
+import "@fontsource/open-sans/400-italic.css"; // Specify weight and style
 
 const inter = Inter({ subsets: ['latin'] })
 

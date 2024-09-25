@@ -288,10 +288,10 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 bg-gray-800 bg-opacity-90 backdrop-blur-sm z-50">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center py-4">
-            <div className="text-xl font-bold text-blue-400">
+            <div className="text-xl font-bold text-blue-400 ">
               Pedram Mirshah
             </div>
-            <ul className="flex space-x-4">
+            <ul className="md:flex space-x-4 hidden">
               {(
                 Object.keys(sectionRefs) as Array<keyof typeof sectionRefs>
               ).map((sectionId) => (
