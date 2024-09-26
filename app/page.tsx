@@ -344,7 +344,7 @@ export default function Home() {
                 Bachelor of Computer Engineering
               </h3>
               <p className="text-lg text-gray-300 mb-2">
-                Tehran Jonoub Islamic Azad University
+              Islamic Azad University, South Tehran Branch
               </p>
               <p className="text-sm text-gray-400">
                 2015 Oct - 2020 Jun | Tehran

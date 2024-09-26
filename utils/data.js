@@ -98,20 +98,25 @@ export const experiences = [
       name: "Tools & Technologies",
       icon: <Tool className="w-6 h-6 text-blue-400" />,
       skills: [
+        
         "Git",
         "Linux",
         "Redux",
-        "JIRA",
         "React Query",
         "Jotai",
         "Rest api",
         "GraphQL",
         "Socket.io",
+        "Ethers.js",
+        "wagmi",
+        "ganache-cli",
+        "RainbowKit",
         "Storybook",
         "Photoshop",
         "Figma",
         "Playwright",
-        "Jest.js"
+        "Jest.js",
+        "JIRA",
       ],
     },
     {
