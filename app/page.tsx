@@ -8,14 +8,10 @@ import {
   Linkedin,
   Github,
   MapPin,
-  ChevronDown,
-  Code,
-  Wrench as Tool,
-  Globe,
-  Beaker,
-} from "lucide-react";
+  ChevronDown,} from "lucide-react";
+import {experiences,skillCategories,projects} from "@/utils/data"
 export default function Home() {
-  const [scrollY, setScrollY] = useState(0);
+  // const [scrollY, setScrollY] = useState(0);
   const sectionRefs: Record<
     "home" | "experience" | "skills" | "projects" | "education",
     React.RefObject<HTMLElement>
@@ -27,14 +23,14 @@ export default function Home() {
     education: useRef(null),
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScrollY(window.scrollY);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -70,218 +66,6 @@ export default function Home() {
     }
   };
 
-  const experiences = [
-    {
-      company: "Nobitex",
-      position: "Front End Engineer",
-      period: "2022 Feb - present",
-      location: "Tehran",
-      achievements: [
-        "Spearheaded the development of Nobigift, boosting returning visitors by 25%, which led to a rise in site traffic and community engagement.",
-        "Elevated user engagement by 40% on the DeFi platform through the creation of an intuitive, responsive UI for over 100 decentralized financial products.",
-        "Overhauled the Nobidex platform, cutting onboarding time by 50% and enhancing user retention with a more streamlined, user-friendly interface.",
-        "Developed comprehensive documentation using Docusaurus, reducing support queries by 30% and improving team collaboration.",
-        "Engineered the Nobitex Labs website using serverless technology, simplifying the deployment pipeline and reducing development time by 50%.",
-        "Strengthened site reliability by implementing E2E tests for Nobidex MVP, reducing post-launch issues and improving deployment quality."
-      ],
-    },
-    {
-      company: "Hami System",
-      position: "Front End Developer",
-      period: "2021 Aug - 2022 Feb",
-      location: "Tehran",
-      achievements: [
-        "Optimized front-end performance for the Samat website, slashing page load times by 30% and driving increased user engagement.",
-        "Reinforced website security by 30% through advanced authentication protocols and the creation of a specialized security section for stock exchange users.",
-        "Implemented a video-based learning section on the Judiciary authentication site, decreasing onboarding time by 30% and boosting comprehension by 40%",
-      ],
-    },
-    {
-      company: "Makeen academy",
-      position: "Mentor",
-      period: "2021 May - 2021 Nov",
-      location: "Tehran",
-      achievements: [
-        "Mentored a team of front-end developers, leading to 100% placement of bootcamp graduates in developer roles.",
-      ],
-    },
-    {
-      company: "Sooran",
-      position: "Front End Developer",
-      period: "2020 Feb - 2021 Mar",
-      location: "Tehran",
-      achievements: [
-        "Built a user-centric front-end for the Mustafa Prize and Parsian Exchange websites, improving site functionality and driving a 15% increase in customer satisfaction.",
-      ],
-    },
-    {
-      company: "Football bartar",
-      position: "Front End Developer",
-      period: "2019 Feb - 2020 Feb",
-      location: "Tehran",
-      achievements: [
-        "Created multiple landing pages, including Rakhtkan and Shootbalista, to enhance user engagement and brand visibility.",
-      ],
-    },
-    {
-      company: "Makeen Ideal Media",
-      position: "Front End Intern,Designer",
-      period: "2015 Jul - 2018 Dec",
-      location: "Tehran",
-      achievements: [
-        "Designed 2D and 3D elements for various gaming projects, transitioning into front-end development and game development with Unity, C#, and JS.",
-      ],
-    },
-  ];
-
-  const skillCategories = [
-    {
-      name: "Programming Languages & Frameworks",
-      icon: <Code className="w-6 h-6 text-blue-400" />,
-      skills: [
-        "JavaScript",
-        "TypeScript",
-        "HTML/CSS/SASS",
-        "Next.js",
-        "React.js",
-        "Node.js",
-        "Express",
-        "Solidity",
-      ],
-    },
-    {
-      name: "Tools & Technologies",
-      icon: <Tool className="w-6 h-6 text-blue-400" />,
-      skills: [
-        "Git",
-        "Linux",
-        "Redux",
-        "JIRA",
-        "React Query",
-        "GraphQL",
-        "Socket.io",
-        "Storybook",
-        "Photoshop",
-        "Figma",
-        "Playwright",
-        "jestjs"
-      ],
-    },
-    {
-      name: "Web Development",
-      icon: <Globe className="w-6 h-6 text-blue-400" />,
-      skills: [
-        "Front-End Development",
-        "UX/UI Design",
-        "Responsive Design",
-        "Web3 Development",
-      ],
-    },
-    {
-      name: "Testing & Optimization",
-      icon: <Beaker className="w-6 h-6 text-blue-400" />,
-      skills: [
-        "E2E Testing",
-        "Code Refactoring",
-        "State Management",
-        "Serverless Platforms",
-      ],
-    },
-  ];
-
-  const projects = [
-    {
-      name: "Nobitex Labs",
-      url: "https://labs.nobitex.ir/#/",
-      description:
-        "An innovative platform for cryptocurrency experiments and blockchain technology exploration.",
-    },
-    {
-      name: "Nobitex DEX",
-      url: "https://dex.nobitex.ir/",
-      description:
-        "A decentralized exchange platform for secure and efficient cryptocurrency trading.",
-    },
-    {
-      name: "CSDI Portal",
-      url: "https://www.csdiran.ir/",
-      description:
-        "A comprehensive portal for the Central Securities Depository of Iran, facilitating securities management.",
-    },
-    {
-      name: "Nobitex Gift Card",
-      url: "https://nobitex.ir/giftcard/",
-      description:
-        "A digital gift card system for cryptocurrency purchases and transfers.",
-    },
-    {
-      name: "CryptoVault (Unreleased)",
-      url: "#",
-      description:
-        "A secure, multi-signature cryptocurrency wallet with advanced security features. (Project discontinued due to regulatory changes)",
-    },
-    {
-      name: "BlockChain Explorer (Unreleased)",
-      url: "#",
-      description:
-        "A user-friendly blockchain explorer for multiple cryptocurrencies. (Project put on hold due to resource constraints)",
-    },
-    {
-      name: "Shootbalista (Unreleased)",
-      url: "#",
-      description:
-        "A live web-based football game offering real-time player interaction and competitive matches.",
-    },
-    {
-      name: "Pardisan Exchange (Unreleased)",
-      url: "#",
-      description:
-        "A site for currency exchange during the COVID-19 pandemic, offering real-time rates for various currencies.",
-    },
-    {
-      name: "Small Crypto Exchange (Unreleased)",
-      url: "#",
-      description:
-        "A lightweight cryptocurrency exchange platform tailored for local market transactions.",
-    },
-    {
-      name: "Samat Admin Panel (Unreleased)",
-      url: "#",
-      description:
-        "A private admin panel designed for internal use by the Samat organization, ensuring secure access to administrative functions.",
-    },
-    {
-      name: "Sooran",
-      url: "https://sooran.co/",
-      description:
-        "A comprehensive website for culinary content, offering recipes and food-related articles. (Released)",
-    },
-    {
-      name: "Tavanmandsazan",
-      url: "https://tavanmandsazan.ir/",
-      description:
-        "A platform aimed at empowering individuals through education and skill development opportunities.",
-    },
-    {
-      name: "Rakhtkan (Unreleased)",
-      url: "#",
-      description:
-        "A content-driven website developed for the Football Bartar content team, offering updates and analysis on football.",
-    },
-    {
-      name: "Footballbartar (Unreleased)",
-      url: "#",
-      description:
-        "A football-centric website providing news, scores, and in-depth coverage of football events.",
-    },
-    {
-      name: "Winka (Unreleased)",
-      url: "#",
-      description:
-        "A football prediction platform allowing users to make match predictions and earn rewards.",
-    },
-  ];
-  
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100 overflow-hidden">
@@ -315,23 +99,23 @@ export default function Home() {
 
       <div
         className="fixed inset-0 bg-gradient-to-b from-blue-900 to-gray-900 z-0"
-        style={{
-          transform: `translateY(${scrollY * 0.5}px)`,
-        }}
+        // style={{
+        //   transform: `translateY(${scrollY * 0.5}px)`,
+        // }}
       />
 
       <main className="relative z-10">
         <motion.section
           id="home"
           ref={sectionRefs.home}
-          className="min-h-screen flex items-center justify-center"
+          className="min-h-screen flex items-center justify-center px-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
           <div className="text-center">
             <motion.h1
-              className="text-5xl font-bold mb-4 text-blue-400"
+              className="md:text-5xl  text-2xl font-bold mb-4 mt-20 text-blue-400"
               initial={{ y: -50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -339,7 +123,7 @@ export default function Home() {
               Pedram Mirshah
             </motion.h1>
             <motion.p
-              className="text-2xl mb-8"
+              className="md:text-2xl text-lg mb-8"
               initial={{ y: -30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -360,10 +144,10 @@ export default function Home() {
                 <Mail size={16} className="mr-2 text-blue-400" />
                 <a href="mailto:webmaster@example.com">pedmsv@gmail.com</a>
               </div>
-              <div className="flex items-center">
+              {/* <div className="flex items-center">
                 <Phone size={16} className="mr-2 text-blue-400" />
                 <a href="tel:+989377303038"> +989377303038</a>
-              </div>
+              </div> */}
               <div className="flex items-center">
                 <Linkedin size={16} className="mr-2 text-blue-400" />
                 <a href="https://www.linkedin.com/in/pedram-mirshah-b5425516a/">
@@ -394,6 +178,11 @@ export default function Home() {
               initial={{ y: 0, opacity: 0 }}
               animate={{ y: [0, 10, 0], opacity: 1 }}
               transition={{ delay: 1, duration: 1.5, repeat: Infinity }}
+              className="cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("experience");
+              }}
             >
               <ChevronDown size={32} className="mt-12 mx-auto text-blue-400" />
             </motion.div>
@@ -418,8 +207,8 @@ export default function Home() {
                 <motion.div
                   key={index}
                   className="bg-gray-700 rounded-lg p-6 shadow-lg transition-all duration-300 hover:shadow-blue-400/20 hover:scale-105"
-                  initial={{ x: -50, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
+                  initial={{  opacity: 0 }}
+                  whileInView={{  opacity: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
@@ -493,7 +282,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
         >
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-blue-400 mb-12 text-center">
@@ -523,7 +312,7 @@ export default function Home() {
                       View Project
                     </a>
                   ) : (
-                    <span className="text-gray-500">Project Unreleased</span>
+                    <span className="text-gray-500">Project Is Not Available</span>
                   )}
                 </motion.div>
               ))}
@@ -568,12 +357,12 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-semibold text-blue-400 mb-4">
+              <h3 className="text-2xl font-semibold text-blue-400 mb-4 text-center">
                 Languages
               </h3>
-              <div className="bg-gray-700 rounded-lg p-6 shadow-lg">
-                <p className="text-lg text-gray-300">English: Fluent</p>
-                <p className="text-lg text-gray-300">Farsi: Native</p>
+              <div className="bg-gray-700 rounded-lg p-6 shadow-lg flex justify-around">
+                <p className="text-lg text-gray-300"><b>English</b>: Fluent</p>
+                <p className="text-lg text-gray-300"><b>Farsi</b>: Native</p>
               </div>
             </motion.div>
           </div>
