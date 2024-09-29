@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import {
   Mail,
   Phone,
+  Menu,
+  X,
   Linkedin,
   Github,
   MapPin,
@@ -13,6 +15,7 @@ import {
 import {experiences,skillCategories,projects} from "@/utils/data"
 export default function Home() {
   // const [scrollY, setScrollY] = useState(0);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const sectionRefs: Record<
     "home" | "experience" | "skills" | "projects" | "education",
     React.RefObject<HTMLElement>
@@ -70,10 +73,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100 overflow-hidden">
-      <nav className="fixed top-0 left-0 right-0 bg-gray-800 bg-opacity-90 backdrop-blur-sm z-50">
+     <nav className="fixed top-0 left-0 right-0 bg-gray-800 bg-opacity-90 backdrop-blur-sm z-50">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center py-4">
-            <div className="text-xl font-bold text-blue-400 ">
+            <div className="text-xl font-bold text-blue-400">
               Pedram Mirshah
             </div>
             <ul className="md:flex space-x-4 hidden">
@@ -93,10 +96,60 @@ export default function Home() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a className="flex items-center" href="https://miiirsha.notion.site/d6fceaa06c104c4da5b91e221103c70b?v=5ee2018b922e4eb7be6587973b20409f">
+                  Study Notes<ExternalLink size={16} className="ml-1"/>
+                </a>
+              </li>
             </ul>
+            <button
+              className="md:hidden text-blue-400"
+              onClick={() => setIsDrawerOpen(true)}
+            >
+              <Menu size={24} />
+            </button>
           </div>
         </div>
       </nav>
+
+      {/* Drawer Menu */}
+      <div
+        className={`fixed inset-y-0 right-0 w-64 bg-gray-800 bg-opacity-95 backdrop-blur-sm z-50 transform transition-transform duration-300 ease-in-out ${
+          isDrawerOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex justify-end p-4">
+          <button
+            className="text-blue-400"
+            onClick={() => setIsDrawerOpen(false)}
+          >
+            <X size={24} />
+          </button>
+        </div>
+        <ul className="flex flex-col space-y-4 p-4">
+          {(
+            Object.keys(sectionRefs) as Array<keyof typeof sectionRefs>
+          ).map((sectionId) => (
+            <li key={sectionId}>
+              <a
+                href={`#${sectionId}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(sectionId);
+                }}
+                className="hover:text-blue-400 transition-colors"
+              >
+                {sectionId.charAt(0).toUpperCase() + sectionId.slice(1)}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a className="flex items-center" href="https://miiirsha.notion.site/d6fceaa06c104c4da5b91e221103c70b?v=5ee2018b922e4eb7be6587973b20409f">
+              Study Notes<ExternalLink size={16} className="ml-1"/>
+            </a>
+          </li>
+        </ul>
+      </div>
 
       <div
         className="fixed inset-0 bg-gradient-to-b from-blue-900 to-gray-900 z-0"
