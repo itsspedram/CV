@@ -8,7 +8,8 @@ import {
   Linkedin,
   Github,
   MapPin,
-  ChevronDown,} from "lucide-react";
+  ChevronDown,ExternalLink} from "lucide-react";
+  import Link from 'next/link'
 import {experiences,skillCategories,projects} from "@/utils/data"
 export default function Home() {
   // const [scrollY, setScrollY] = useState(0);
@@ -213,7 +214,9 @@ export default function Home() {
                   viewport={{ once: true }}
                 >
                   <h3 className="text-2xl font-semibold text-blue-400">
-                    {exp.company}
+                  <Link href={exp.url} target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center">
+                {exp.company} <ExternalLink size={16} className="ml-1" />
+              </Link>
                   </h3>
                   <p className="text-lg text-gray-300 mb-2">{exp.position}</p>
                   <p className="text-sm text-gray-400 mb-4">

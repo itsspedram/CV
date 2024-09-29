@@ -16,6 +16,7 @@ export const experiences = [
       position: "Front End Engineer",
       period: "2022 Feb - present",
       location: "Tehran",
+      url: "https://nobitex.ir/",
       achievements: [
         "Spearheaded the development of Nobigift, boosting returning visitors by 25%, which led to a rise in site traffic and community engagement.",
         "Elevated user engagement by 40% on the DeFi platform through the creation of an intuitive, responsive UI for over 100 decentralized financial products.",
@@ -28,6 +29,7 @@ export const experiences = [
     {
       company: "Hami System",
       position: "Front End Developer",
+      url: "https://hamisystem.com/",
       period: "2021 Aug - 2022 Feb",
       location: "Tehran",
       achievements: [
@@ -39,6 +41,7 @@ export const experiences = [
     {
       company: "Makeen academy",
       position: "Mentor",
+      url: "https://makeen.ir/",
       period: "2021 May - 2021 Nov",
       location: "Tehran",
       achievements: [
@@ -47,6 +50,7 @@ export const experiences = [
     },
     {
       company: "Sooran",
+      url: "https://sooran.co/",
       position: "Front End Developer",
       period: "2020 Feb - 2021 Mar",
       location: "Tehran",
@@ -57,6 +61,7 @@ export const experiences = [
     {
       company: "Football bartar",
       position: "Front End Developer",
+      url: "#",
       period: "2019 Feb - 2020 Feb",
       location: "Tehran",
       achievements: [
@@ -65,6 +70,7 @@ export const experiences = [
     },
     {
       company: "Makeen Ideal Media",
+      url: "https://makeen.ir/",
       position: "Designer,Front End Intern",
       period: "2015 Jul - 2018 Dec",
       location: "Tehran",
