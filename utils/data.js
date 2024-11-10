@@ -167,6 +167,12 @@ export const experiences = [
         "A Chrome extension for verifying Nobitex's proof of reserves, ensuring users that their cryptocurrency assets are backed with verifiable funds. This extension provides transparency and trust in Nobitex's financial security.",
     },
     {
+      name: "Nobitex Storybook",
+      url: "https://storybook.nxbo.ir/",
+      description:
+        "A comprehensive React Storybook component library and Next.js integration showcase. This project demonstrates best practices for documenting and testing React components, with a special focus on TypeScript and serverless function components.",
+    },
+    {
       name: "CSDI Portal",
       url: "https://www.csdiran.ir/",
       description:
