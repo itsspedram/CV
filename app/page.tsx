@@ -10,6 +10,7 @@ import {
   Linkedin,
   Github,
   MapPin,
+  Code,
   ChevronDown,ExternalLink} from "lucide-react";
   import Link from 'next/link'
 import {experiences,skillCategories,projects} from "@/utils/data"
@@ -192,7 +193,7 @@ export default function Home() {
             >
               <div className="flex items-center">
                 <MapPin size={16} className="mr-2 text-blue-400" />
-                Tehran
+                Dubai
               </div>
               <div className="flex items-center">
                 <Mail size={16} className="mr-2 text-blue-400" />
@@ -211,6 +212,10 @@ export default function Home() {
               <div className="flex items-center">
                 <Github size={16} className="mr-2 text-blue-400" />
                 <a href="https://github.com/itsspedram"> @itsspedram</a>
+              </div>
+              <div className="flex items-center">
+                <Code size={16} className="mr-2 text-blue-400" />
+                <a href="https://leetcode.com/miiirshah/"> Pedram Mirshah</a>
               </div>
             </motion.div>
             <motion.p
